@@ -21,7 +21,7 @@ module tb;
 `endif
 
     // Instantiate the actual project module
-    tt_um_deadtime_pwm user_project (
+    tt_um_phaneeswar2006_prog uut (
 `ifdef GL_TEST
         .VPWR(VPWR),
         .VGND(VGND),
