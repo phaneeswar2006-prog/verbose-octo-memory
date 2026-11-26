@@ -21,15 +21,23 @@ async def sample_cycle(dut):
     return int(dut.uo_out.value)
 
 
+
 async def write_shadow(dut, sel, value):
-    """Write a shadow register using the RTL's actual control interface."""
+    """Write a shadow register without unintentionally disabling PWM."""
     await FallingEdge(dut.clk)
+
+    # Preserve the current PWM enable state.
+    pwm_was_enabled = int(dut.uio_in.value) & 0x08
+
     dut.ui_in.value = value & 0xFF
-    dut.uio_in.value = (sel & 0x03) | 0x04
+    dut.uio_in.value = pwm_was_enabled | (sel & 0x03) | 0x04
 
     await RisingEdge(dut.clk)
     await FallingEdge(dut.clk)
-    dut.uio_in.value = 0
+
+    # Disable register writing, but preserve PWM enable.
+    dut.uio_in.value = pwm_was_enabled
+
 
 
 async def collect_samples(dut, count):
