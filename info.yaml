@@ -1,20 +1,22 @@
 
   
 # Tiny Tapeout project information
+
 project:
-  title: "Dead-Time PWM Generator"
+  title: "Dead-Time PWM Controller"
   author: "Vishwanatha KM, Phaneeswar T, V Jayakrishna, Monica S,Shylashree N, RVCollege of Engineering"
   discord: ""
-  description: "Programmable complementary PWM generator with dead-time insertion and glitch-free duty-cycle updates."
+  description: "Dead-time PWM controller with shadow registers"
   language: "Verilog"
   clock_hz: 50000000
 
-tiles: "1x1"
+  tiles: "1x1"
 
-top_module: "tt_um_deadtime_pwm"
+  top_module: "tt_um_phaneeswar2006_prog"
 
-source_files:
-  - "project.v"
+  source_files:
+    - "project.v"
+
 
 
 
