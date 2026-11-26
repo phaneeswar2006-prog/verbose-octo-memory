@@ -1,48 +1,53 @@
 
-  title: "Programmable Dead-Time and Shadow-Buffered PWM"
-  author: "Vishwanatha KM, Phaneeswar T, V Jayakrishna, Monica S,Shylashree N, RVCollege of Engineering "
-  description: "PWM controller with programmable dead-time and glitch-free shadow register updates."
+  
+# Tiny Tapeout project information
+project:
+  title: "Dead-Time PWM Generator"
+  author: "Vishwanatha KM, Phaneeswar T, V Jayakrishna, Monica S,Shylashree N, RVCollege of Engineering"
+  discord: ""
+  description: "Programmable complementary PWM generator with dead-time insertion and glitch-free duty-cycle updates."
   language: "Verilog"
   clock_hz: 50000000
 
-  tiles: "1x1"
+tiles: "1x1"
 
-  top_module: "tt_um_deadtime_pwm"
+top_module: "tt_um_deadtime_pwm"
 
-  source_files:
-    - "project.v"
+source_files:
+  - "project.v"
+
 
 
 # The pinout of your project. Leave unused pins blank. DO NOT delete or add any pins.
 # This section is for the datasheet/website. Use descriptive names (e.g., RX, TX, MOSI, SCL, SEG_A, etc.).
 
-  pinout:
-    # Inputs
-    ui[0]: "config_data_0"
-    ui[1]: "config_data_1"
-    ui[2]: "config_data_2"
-    ui[3]: "config_data_3"
-    ui[4]: "config_data_4"
-    ui[5]: "config_data_5"
-    ui[6]: "config_data_6"
-    ui[7]: "config_data_7"
+  
+pinout:
+  ui[0]: "Register data bit 0"
+  ui[1]: "Register data bit 1"
+  ui[2]: "Register data bit 2"
+  ui[3]: "Register data bit 3"
+  ui[4]: "Register data bit 4"
+  ui[5]: "Register data bit 5"
+  ui[6]: "Register data bit 6"
+  ui[7]: "Register data bit 7"
 
-    # Outputs
-    uo[0]: "pwm_high"
-    uo[1]: "pwm_low"
-    uo[2]: "raw_pwm"
-    uo[3]: "period_tick"
-    uo[4]: ""
-    uo[5]: ""
-    uo[6]: ""
-    uo[7]: ""
+  uo[0]: "High-side PWM"
+  uo[1]: "Low-side PWM"
+  uo[2]: "Raw PWM reference"
+  uo[3]: "PWM period boundary"
+  uo[4]: ""
+  uo[5]: ""
+  uo[6]: ""
+  uo[7]: ""
 
-    # Bidirectional pins used as inputs
-    uio[0]: "reg_sel_0"
-    uio[1]: "reg_sel_1"
-    uio[2]: "load_enable"
-    uio[3]: "pwm_enable"
-    uio[4]: ""
-    uio[5]: ""
-    uio[6]: ""
-    uio[7]: ""
+  uio[0]: "Register select bit 0"
+  uio[1]: "Register select bit 1"
+  uio[2]: "Register load enable"
+  uio[3]: "PWM enable"
+  uio[4]: ""
+  uio[5]: ""
+  uio[6]: ""
+  uio[7]: ""
+
+yaml_version: 6
