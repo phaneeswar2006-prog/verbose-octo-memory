@@ -2,6 +2,7 @@
   
 # Tiny Tapeout project information
 
+
 project:
   title: "Dead-Time PWM Controller"
   author: "Vishwanatha KM, Phaneeswar T, V Jayakrishna, Monica S,Shylashree N, RVCollege of Engineering"
@@ -16,6 +17,7 @@ project:
 
   source_files:
     - "project.v"
+
 
 
 
