@@ -180,7 +180,7 @@ async def test_deadtime_pwm(dut):
     await write_shadow(dut, 0b00, NEW_DUTY)
 
     # The active duty should change at a period boundary, not immediately.
-    updated_samples = await collect_samples(dut, 120)
+    updated_samples = await collect_samples(dut, 3 * PWM_PERIOD + 10)
 
     check_no_overlap(updated_samples)
 
